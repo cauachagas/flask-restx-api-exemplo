@@ -1,3 +1,5 @@
+![Vercel](https://vercelbadge.vercel.app/api/cauachagas/flask-restx-api-exemplo)
+
 # Iniciando com Flask-RESTX Framework
 
 Flask-RESTX é uma extensão para Flask que adiciona suporte para construir APIs REST rapidamente. Flask-RESTX incentiva as melhores práticas com configuração mínima. Se você está familiarizado com o Flask, o Flask-RESTX deve ser fácil de aprender. Ele fornece uma coleção coerente de decoradores e ferramentas para descrever sua API e expor sua documentação corretamente (usando Swagger).[<sup>1</sup>](#1)
@@ -96,3 +98,6 @@ https://flask-restx-api-exemplo.vercel.app
 - https://www.youtube.com/watch?v=levz4eumJ98
 - https://vercel.com/docs/serverless-functions/supported-languages#python
 - https://dev.to/andrewbaisden/how-to-deploy-a-python-flask-app-to-vercel-2o5k
+
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fcauachagas%2Fflask-restx-api-exemplo)
