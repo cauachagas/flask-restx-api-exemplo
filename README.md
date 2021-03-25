@@ -28,10 +28,71 @@ python main.py
 
 Em seguida abra o link http://127.0.0.1:5000/ no seu navegador.
 
-## Exemplo
+![](https://media.giphy.com/media/XCKRBs6sXIO0JprpJh/giphy.gif)
 
-![](exemplo.gif)
+## Deploy na Vercel e Serverless Functions
+
+Vercel é uma plataforma em nuvem para **sites estáticos** (Jamstack) e **Serverless Functions** que se adapta perfeitamente ao seu fluxo de trabalho. Ele permite que os desenvolvedores hospedem sites e serviços da web com **deploys instantâneos**,  **escalados automaticamente** e não requer supervisão, tudo sem configuração.
+
+A Vercel é o responsável pelo incrível [Next.js](https://nextjs.org/).
+
+### Deploy através de um repositório
+
+No respositório deve exister
+
+1. Um arquivo `requirements.txt` com as dependências do projeto;
+2. Um arquivo python que rode a aplicação (aqui foi usado `main.py`);
+3. Um arquivo `vercel.json` ([ver aqui](https://raw.githubusercontent.com/cauachagas/flask-restx-api-exemplo/master/vercel.json)) que aponte para o arquivo python que roda a aplicação
+
+Caso você tenha feito um fork desse repositório basta fazer o seguinte para ter sua aplicação rodando na Vercel:
+
+1. Criar uma conta na [Vercel](https://vercel.com)
+2. Criar um novo projeto na sua conta Vercel
+3. Importar projeto de seu repositório Git
+4. Iniciar o deploy sem mexer em qualquer configuração
+
+![](https://media.giphy.com/media/N6sXwYAHOYZQa75MFa/giphy.gif)
+
+### Deploy feito localmente
+
+Também é possível fazer o deploy a partir de sua máquina. Para isso será preciso
+
+1. Instalar `Node.js` (Se estiver usando conda, basta digitar `conda install nodejs`). 
+2. Instalar o Vercel CLI `npm i -g vercel`. 
+   - **OBS**: Estou considerando que o arquivo python que roda a aplicação seja `main.py` e que ele está na raiz do projeto
+3. Criar um arquivo `vercel.json` na raiz do projeto com as informações contidas [aqui](https://raw.githubusercontent.com/cauachagas/flask-restx-api-exemplo/master/vercel.json)
+
+
+Após isso, basta usar o comando 
+
+```bash
+vercel --prod
+```
+
+para fazer o deploy.
+
+
+Usando a estrutura deste repositório, ficou assim:
+
+```bash
+vercel --prod
+Vercel CLI 21.3.3
+? Set up and deploy “~/flask-restx-api”? [Y/n] y
+? Which scope do you want to deploy to? cauachagas
+? Link to existing project? [y/N] n
+? What’s your project’s name? flask-restx-api
+? In which directory is your code located? ./
+```
+
+Ao terminar, mostrará um link para acessar sua aplicação.
+
+### Veja esta aplicação rodando
+
+https://flask-restx-api-exemplo.vercel.app
+
 
 ## Referências
 - <a class="anchor" id="1">https://flask-restx.readthedocs.io/en/latest/</a>
 - https://www.youtube.com/watch?v=levz4eumJ98
+- https://vercel.com/docs/serverless-functions/supported-languages#python
+- https://dev.to/andrewbaisden/how-to-deploy-a-python-flask-app-to-vercel-2o5k
