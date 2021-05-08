@@ -2,13 +2,13 @@
 
 # Iniciando com Flask-RESTX Framework
 
-Flask-RESTX é uma extensão para Flask que adiciona suporte para construir APIs REST rapidamente. Flask-RESTX incentiva as melhores práticas com configuração mínima. Se você está familiarizado com o Flask, o Flask-RESTX deve ser fácil de aprender. Ele fornece uma coleção coerente de decoradores e ferramentas para descrever sua API e expor sua documentação corretamente (usando Swagger).[<sup>1</sup>](#1)
+`Flask-RESTX` é uma extensão para Flask que adiciona suporte para construir APIs REST rapidamente. `Flask-RESTX` incentiva as melhores práticas com configuração mínima. Se você está familiarizado com o Flask, o `Flask-RESTX` deve ser fácil de aprender. Ele fornece uma coleção coerente de decoradores e ferramentas para descrever sua API e expor sua documentação corretamente (usando Swagger).[<sup>1</sup>](#1)
 
 ## Primeiros passos
 
-O ideal é criar um ambiente de desenvolvimento virtual para rodar o projeto. Geralmente, recomendam o uso do `virtualenv`. Caso queira fazer deploy de uma aplicação Flask no Heroku é melhor usar uma versão `3.6 >= 3.6.x <= 3.6.13` do Python, que pode ser facilmente instalado pelo `miniconda/anaconda`.
+O ideal é criar um ambiente de desenvolvimento virtual para rodar o projeto. Geralmente, recomendam o uso do `virtualenv`.
 
-Nesse [link](https://github.com/cauachagas/cling-torch#passo-1---instalando-miniconda) mostro como instalar o miniconda e criar um ambiente de desenvolvimento.
+Nesse [link](https://github.com/cauachagas/cling-torch#passo-1---instalando-miniconda) mostro como instalar o `miniconda` e criar um ambiente de desenvolvimento.
 
 ## Como rodar o projeto
 
@@ -18,13 +18,13 @@ Nesse [link](https://github.com/cauachagas/cling-torch#passo-1---instalando-mini
 4. Instale as dependências;
 5. Inicie o servidor.
 
-Caso use o `miniconda/anaconda` e tenha os scripts `conda` e `activate` no `$PATH` então o passos serão esses
+Caso use o modulo `venv` para criar o ambiente virtual, então o passos serão esses
 
 ```bash
 git clone https://github.com/cauachagas/flask-restx-api-exemplo
 cd flask-restx-api-exemplo
-conda env create -f environment.yml
-source activate flask-restx
+python3 -m venv venv
+source venv/bin/activate
 python main.py
 ```
 
@@ -40,7 +40,7 @@ A Vercel é o responsável pelo incrível [Next.js](https://nextjs.org/).
 
 ### Deploy através de um repositório
 
-No respositório deve exister
+No repositório deve existir
 
 1. Um arquivo `requirements.txt` com as dependências do projeto;
 2. Um arquivo python que rode a aplicação (aqui foi usado `main.py`);
@@ -68,17 +68,24 @@ Também é possível fazer o deploy a partir de sua máquina. Para isso será pr
 Após isso, basta usar o comando 
 
 ```bash
-vercel --prod
+vercel
 ```
 
 para fazer o deploy.
 
+Para produção
+
+```bash
+vercel --prod
+```
+
+OBS: Não estou falando sobre variáveis de ambiente. Mais caso precise, utilize o site da vercel para expor as variáveis de ambiente que sua aplicação necessita.
 
 Usando a estrutura deste repositório, ficou assim:
 
 ```bash
-vercel --prod
-Vercel CLI 21.3.3
+vercel
+Vercel CLI 22.0.1
 ? Set up and deploy “~/flask-restx-api”? [Y/n] y
 ? Which scope do you want to deploy to? cauachagas
 ? Link to existing project? [y/N] n
